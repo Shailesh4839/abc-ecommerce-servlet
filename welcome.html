@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome User - ABC Shopping</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f6f9;
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Top Navigation Header Bar */
+        .top-navbar {
+            background-color: #ffffff;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .top-navbar h2 {
+            font-size: 22px;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        .top-navbar h2 span {
+            color: #3498db;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        /* Cart & Logout Button Styling */
+        .btn-cart {
+            background-color: #2ecc71;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 6px rgba(46, 204, 113, 0.2);
+        }
+
+        .btn-cart:hover {
+            background-color: #27ae60;
+            transform: translateY(-1px);
+        }
+
+        .btn-logout {
+            background-color: #e74c3c;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 6px rgba(231, 76, 60, 0.2);
+        }
+
+        .btn-logout:hover {
+            background-color: #c0392b;
+            transform: translateY(-1px);
+        }
+
+        /* Main Dashboard Content */
+        .dashboard-container {
+            max-width: 1000px;
+            width: 100%;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            font-size: 18px;
+            color: #7f8c8d;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Shopping Categories Grid */
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .category-card {
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 30px 20px;
+            text-align: center;
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: 600;
+            font-size: 18px;
+            border: 1px solid #eef2f5;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        /* Card Hover Effects */
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+            border-color: #3498db;
+            color: #3498db;
+        }
+
+        /* Small emoji icon representation for visual appeal */
+        .category-icon {
+            font-size: 32px;
+            margin-bottom: 5px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .top-navbar {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+            .dashboard-container {
+                margin: 20px auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Navigation Bar -->
+    <header class="top-navbar">
+        <h2>Welcome, <span>User</span></h2>
+        
+        <div class="header-actions">
+            <a href="cart" class="btn-cart">🛒 See the Cart</a>
+            <a href="logout" class="btn-logout">🚪 Logout</a>
+        </div>
+    </header>
+
+    <!-- Main Section -->
+    <main class="dashboard-container">
+        <h3 class="section-title">Explore Categories</h3>
+        
+        <div class="categories-grid">
+            <a href="mobile.html" class="category-card">
+                <span class="category-icon">📱</span>
+                Mobile
+            </a>
+            <a href="laptop.html" class="category-card">
+                <span class="category-icon">💻</span>
+                Laptop
+            </a>
+            <a href="car.html" class="category-card">
+                <span class="category-icon">🚗</span>
+                Car
+            </a>
+            <a href="watches.html" class="category-card">
+                <span class="category-icon">⌚</span>
+                Watches
+            </a>
+            <a href="men.html" class="category-card">
+                <span class="category-icon">👔</span>
+                Men Formals
+            </a>
+            <a href="women.html" class="category-card">
+                <span class="category-icon">👗</span>
+                Women Formals
+            </a>
+        </div>
+    </main>
+
+</body>
+</html>

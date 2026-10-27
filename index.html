@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to ABC Shopping</title>
+    
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background-color: #f3f4f6;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        /* Split-screen wrapper */
+        .split-container {
+            display: flex;
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 900px;
+            min-height: 550px;
+            overflow: hidden;
+        }
+
+        /* LEFT PANEL: Branding & Categories */
+        .left-panel {
+            flex: 1;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .brand-section h1 {
+            font-size: 32px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+        }
+
+        .brand-section p {
+            color: #cbd5e1;
+            font-size: 14px;
+        }
+
+        /* Image Showcase Banner */
+        .preview-banner {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 12px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .preview-banner marquee {
+            font-size: 16px;
+            font-weight: 500;
+            color: #f8fafc;
+        }
+
+        .image-strip {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .image-strip img {
+            width: 45px;
+            height: 45px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+        }
+
+        /* Categories Grid in Left Panel */
+        .category-links {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .category-links a {
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            text-decoration: none;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 13px;
+            text-align: center;
+            font-weight: 500;
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .category-links a:hover {
+            background: #ffffff;
+            color: #1e3c72;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* RIGHT PANEL: Clean Login Form */
+        .right-panel {
+            flex: 1;
+            padding: 50px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .right-panel h2 {
+            font-size: 28px;
+            color: #1e293b;
+            margin-bottom: 8px;
+        }
+
+        .right-panel .subtext {
+            color: #64748b;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: #475569;
+            margin-bottom: 6px;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="password"] {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 15px;
+            color: #334155;
+            background-color: #f8fafc;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus {
+            border-color: #2a5298;
+            background-color: #ffffff;
+            outline: none;
+            box-shadow: 0 0 0 4px rgba(42, 82, 152, 0.1);
+        }
+
+        /* Stay signed in & options */
+        .form-options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            font-size: 13px;
+        }
+
+        .remember-me {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #475569;
+            cursor: pointer;
+        }
+
+        .remember-me input {
+            width: 16px;
+            height: 16px;
+            accent-color: #2a5298;
+            cursor: pointer;
+        }
+
+        /* Login Button */
+        .btn-login {
+            background: #2a5298;
+            color: white;
+            border: none;
+            width: 100%;
+            padding: 14px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.2s ease;
+            box-shadow: 0 4px 12px rgba(42, 82, 152, 0.2);
+            margin-bottom: 20px;
+        }
+
+        .btn-login:hover {
+            background: #1e3c72;
+        }
+
+        /* Register link at bottom */
+        .register-text {
+            text-align: center;
+            font-size: 14px;
+            color: #64748b;
+        }
+
+        .register-text a {
+            color: #2a5298;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .register-text a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .split-container {
+                flex-direction: column;
+                max-width: 400px;
+            }
+            .left-panel {
+                padding: 30px 20px;
+                gap: 20px;
+            }
+            .right-panel {
+                padding: 40px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="split-container">
+        
+        <div class="left-panel">
+            <div class="brand-section">
+                <h1>ABC Shopping</h1>
+                <p>Your one-stop destination for everything.</p>
+            </div>
+
+            <div class="preview-banner">
+                <marquee scrollamount="4" behavior="scroll" direction="left">
+                    🔥 Mega Sale Live! Explore Premium Collections Now!
+                </marquee>
+                <div class="image-strip">
+                    <img src="images/mobile.jpg" alt="Mobile">
+                    <img src="images/watch.jpg" alt="Watch">
+                    <img src="images/laptop.jpg" alt="Laptop">
+                    <img src="images/car.jpg" alt="Car">
+                </div>
+            </div>
+
+            <div class="category-links">
+                <a href="mobile.html">📱 Mobiles</a>
+                <a href="laptop.html">💻 Laptops</a>
+                <a href="watches.html">⌚ Watches</a>
+                <a href="car.html">🚗 Cars</a>
+                <a href="men.html">👔 Men's Fashion</a>
+                <a href="women.html">👗 Women's Fashion</a>
+            </div>
+        </div>
+
+        <div class="right-panel">
+            <h2>Welcome Back</h2>
+            <p class="subtext">Please enter your details to sign in.</p>
+            
+            <form method="post" action="login">
+                <div class="form-group">
+                    <label for="userId">Username</label>
+                    <input type="text" id="userId" name="userId" placeholder="Enter username" required />
+                </div>
+                
+                <div class="form-group">
+                    <label for="pass">Password</label>
+                    <input type="password" id="pass" name="pass" placeholder="••••••••" required />
+                </div>
+
+                <div class="form-options">
+                    <label class="remember-me" for="cooky">
+                        <input type="checkbox" id="cooky" name="cooky" value="yes" />
+                        Stay signed in
+                    </label>
+                </div>
+                
+                <button type="submit" name="login" value="login" class="btn-login">Sign In</button>
+
+                <p class="register-text">
+                    Don't have an account? <a href="register.html">Register here</a>
+                </p>
+            </form>
+        </div>
+
+    </div>
+
+</body>
+</html>
